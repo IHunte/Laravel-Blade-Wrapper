@@ -13,7 +13,7 @@ An extension to wrap Blade Directives.
 - Windows `Ctrl + Shift + T`
 - Mac `⌘ + Shift + T`
 
-![Demo](https://github.com/IHunte/Laravel-Blade-Wrapper/main/images/demo.gif)
+![Demo](https://raw.githubusercontent.com/IHunte/Laravel-Blade-Wrapper/main/images/demo.gif)
 
 | Blade Directives                   |
 | ---------------------------------- |
