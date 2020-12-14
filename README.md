@@ -1,19 +1,27 @@
-# Laravel Blade Wrapper
+# [Laravel Blade Wrapper](https://marketplace.visualstudio.com/items?itemName=IHunte.laravel-blade-wrapper)
 
 <p align="center">
 <br />
 <img src="https://raw.githubusercontent.com/IHunte/Laravel-Blade-Wrapper/main/images/icon.png">
 </p>
 <p align="center">
-An extension to wrap Blade Directives.
+An extension to wrap Blade directives.
 </p>
+
+<br>
 
 ## Usage
 
 - Windows `Ctrl + Shift + T`
 - Mac `⌘ + Shift + T`
 
-![Demo](https://raw.githubusercontent.com/IHunte/Laravel-Blade-Wrapper/main/images/demo.gif)
+<div align="center">
+
+![Demo](https://github.com/IHunte/Laravel-Blade-Wrapper/blob/main/images/demo.gif?raw=true)
+
+</div>
+
+<br>
 
 | Blade Directives                   |
 | ---------------------------------- |
@@ -47,12 +55,24 @@ An extension to wrap Blade Directives.
 | @verbatim...@endverbatim           |
 | @switch...@case...@endswitch       |
 
+<br>
+
 ## Credits
 
 - [Laravel Blade Snippets - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
 
-## Reference
+<br>
+
+## Contribution
+
+If you have any suggestion please open an [issue](https://github.com/IHunte/Laravel-Blade-Wrapper/issues) or contact me on [@IHunte2](https://twitter.com/IHunte2)
+
+<br>
+
+## Documentation
 
 - [Blade Templates - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/8.x/blade)
+
+<br>
 
 **Enjoy!**

@@ -1,13 +1,13 @@
 {
 	"name": "laravel-blade-wrapper",
 	"displayName": "Laravel Blade Wrapper",
-	"description": "An extension to wrap Blade Directives",
-	"version": "0.0.1",
+	"description": "An extension to wrap Blade directives",
+	"version": "0.0.2",
 	"publisher": "IHunte",
 	"homepage": "https://github.com/IHunte/Laravel-Blade-Wrapper",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/IHunte/Laravel-Blade-Wrapper.git"
+		"url": "https://github.com/IHunte/Laravel-Blade-Wrapper"
 	},
 	"bugs": {
 		"url": "https://github.com/IHunte/Laravel-Blade-Wrapper/issues"
