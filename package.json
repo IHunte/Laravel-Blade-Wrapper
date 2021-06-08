@@ -2,7 +2,7 @@
 	"name": "laravel-blade-wrapper",
 	"displayName": "Laravel Blade Wrapper",
 	"description": "An extension to wrap Blade directives",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"publisher": "IHunte",
 	"homepage": "https://github.com/IHunte/Laravel-Blade-Wrapper",
 	"repository": {
@@ -16,10 +16,10 @@
 		"vscode": "^1.52.0"
 	},
 	"keywords": [
-        "laravel",
-        "blade",
-        "template",
-        "snippet",
+		"laravel",
+		"blade",
+		"template",
+		"snippet",
 		"formatter",
 		"wrapper"
 	],
@@ -27,408 +27,407 @@
 	"categories": [
 		"Programming Languages",
 		"Snippets",
-        "Formatters"
+		"Formatters"
 	],
-    "activationEvents": [
+	"activationEvents": [
 		"*"
 	],
 	"main": "./out/wrapper.js",
 	"contributes": {
 		"configuration": {
-		  "type": "object",
-		  "title": "Wrap With",
-		  "properties": {
-			"wrap.with.if": {
-			  "type": "object",
-			  "default": {
-				"label": "@if",
-				"description": "@if()...@endif",
-				"disabled": false,
-				"snippet": "@if (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endif$0"
-			  }
-			},
-			"wrap.with.ifelse": {
-				"type": "object",
-				"default": {
-				  "label": "@if-else",
-				  "description": "@if()...@else...@endif",
-				  "disabled": false,
-				  "snippet": "@if (${1:condition}) \n\t$TM_SELECTED_TEXT\n@else \n\n@endif$0"
-			  }
-			},
-			"wrap.with.for": {
-				"type": "object",
-				"default": {
-				  "label": "@for",
-				  "description": "@for...@endfor",
-				  "disabled": false,
-				  "snippet": "@for (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endfor$0"
-			  }
-			},
-			"wrap.with.foreach": {
-				"type": "object",
-				"default": {
-				  "label": "@foreach",
-				  "description": "@foreach...@endforeach",
-				  "disabled": false,
-				  "snippet": "@foreach (${1:\\$collection} as ${2:\\$item}) \n\t$TM_SELECTED_TEXT\n@endforeach$0"
-			  }
-			},
-			"wrap.with.forelse": {
-				"type": "object",
-				"default": {
-				  "label": "@forelse",
-				  "description": "@forelse...@empty...@endforelse",
-				  "disabled": false,
-				  "snippet": "@forelse (${1:\\$collection} as ${2:\\$item}) \n\t$TM_SELECTED_TEXT\n@empty \n\n@endforelse"
-			  }
-			},
-			"wrap.with.while": {
-				"type": "object",
-				"default": {
-				  "label": "@while",
-				  "description": "@while...@endwhile",
-				  "disabled": false,
-				  "snippet": "@while (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endwhile$0"
-			  }
-			},
-			"wrap.with.push": {
-				"type": "object",
-				"default": {
-				  "label": "@push",
-				  "description": "@push...@endpush",
-				  "disabled": false,
-				  "snippet": "@push ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endpush$0"
-			  }
-			},
-			"wrap.with.prepend": {
-				"type": "object",
-				"default": {
-				  "label": "@prepend",
-				  "description": "@prepend...@endprepend",
-				  "disabled": false,
-				  "snippet": "@prepend ('${1:scripts}') \n\t$TM_SELECTED_TEXT\n@endprepend$0"
-			  }
-			},	
-			"wrap.with.once": {
-				"type": "object",
-				"default": {
-				  "label": "@once",
-				  "description": "@once...@endonce",
-				  "disabled": false,
-				  "snippet": "@once \n\t$TM_SELECTED_TEXT\n@endonce$0"
-			  }
-			},						
-			"wrap.with.section": {
-				"type": "object",
-				"default": {
-				  "label": "@section",
-				  "description": "@section...@endsection",
-				  "disabled": false,
-				  "snippet": "@section ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endsection$0"
-			  }
-			},
-			"wrap.with.sectionshow": {
-				"type": "object",
-				"default": {
-				  "label": "@section-show",
-				  "description": "@section...@show",
-				  "disabled": false,
-				  "snippet": "@section ('${1}') \n\t$TM_SELECTED_TEXT\n@show$0"
-			  }
-			},	
-			"wrap.with.hassection": {
-				"type": "object",
-				"default": {
-				  "label": "@has-section",
-				  "description": "@hasSection...@else...@endif",
-				  "disabled": false,
-				  "snippet": "@hasSection ('${1:name}') \n\t$TM_SELECTED_TEXT\n@else \n\n@endif"
-			  }
-			},
-			"wrap.with.unless": {
-				"type": "object",
-				"default": {
-				  "label": "@unless",
-				  "description": "@unless...@endunless",
-				  "disabled": false,
-				  "snippet": "@unless ($1) \n\t$TM_SELECTED_TEXT\n@endunless$0"
-			  }
-			},
-			"wrap.with.can": {
-				"type": "object",
-				"default": {
-				  "label": "@can",
-				  "description": "@can...@endcan",
-				  "disabled": false,
-				  "snippet": "@can ('${1:update}', ${2:Model}::class) \n\t$TM_SELECTED_TEXT\n@endcan$0"
-			  }
-			},														
-			"wrap.with.canelse": {
-				"type": "object",
-				"default": {
-				  "label": "@can-elsecan",
-				  "description": "@can...@elsecan...@endcan",
-				  "disabled": false,
-				  "snippet": "@can ('${1:update}', ${2:\\$post}) \n\t$TM_SELECTED_TEXT\n@elsecan ('${3:create}', ${4:\\$post}) \n\n@endcan"
-			  }
-			},
-			"wrap.with.cannot": {
-				"type": "object",
-				"default": {
-				  "label": "@cannot",
-				  "description": "@cannot...@endcannot",
-				  "disabled": false,
-				  "snippet": "@cannot ('${1:update}', ${2:Model}::class) \n\t$TM_SELECTED_TEXT\n@endcannot$0"
-			  }
-			},														
-			"wrap.with.cannotelse": {
-				"type": "object",
-				"default": {
-				  "label": "@cannot-elsecannot",
-				  "description": "@cannot...@elsecannot...@endcannot",
-				  "disabled": false,
-				  "snippet": "@cannot ('${1:update}', ${2:\\$post}) \n\t$TM_SELECTED_TEXT\n@elsecannot ('${3:create}', ${4:\\$post}) \n\n@endcannot"
-			  }
-			},
-			"wrap.with.component": {
-				"type": "object",
-				"default": {
-				  "label": "@component",
-				  "description": "@component...@endcomponent",
-				  "disabled": false,
-				  "snippet": "@component ('$1') \n\t$TM_SELECTED_TEXT\n@endcomponent$0"
-			  }
-			},
-			"wrap.with.slot": {
-				"type": "object",
-				"default": {
-				  "label": "@slot",
-				  "description": "@slot...@endslot",
-				  "disabled": false,
-				  "snippet": "@slot ('$1') \n\t$TM_SELECTED_TEXT\n@endslot$0"
-			  }
-			},
-			"wrap.with.isset": {
-				"type": "object",
-				"default": {
-				  "label": "@isset",
-				  "description": "@isset...@endisset",
-				  "disabled": false,
-				  "snippet": "@isset (${1:\\$record}) \n\t$TM_SELECTED_TEXT\n@endisset$0"
-			  }
-			},														
-			"wrap.with.empty": {
-				"type": "object",
-				"default": {
-				  "label": "@empty",
-				  "description": "@empty...@endempty",
-				  "disabled": false,
-				  "snippet": "@empty (${1:\\$record}) \n\t$TM_SELECTED_TEXT\n@endempty$0"
-			  }
-			},
-			"wrap.with.auth": {
-				"type": "object",
-				"default": {
-				  "label": "@auth",
-				  "description": "@auth...@endauth",
-				  "disabled": false,
-				  "snippet": "@auth\n\t$TM_SELECTED_TEXT\n@endauth$0"
-			  }
-			},														
-			"wrap.with.guest": {
-				"type": "object",
-				"default": {
-				  "label": "@guest",
-				  "description": "@guest...@endguest",
-				  "disabled": false,
-				  "snippet": "@guest\n\t$TM_SELECTED_TEXT\n@endguest$0"
-			  }
-			},
-			"wrap.with.error": {
-				"type": "object",
-				"default": {
-				  "label": "@error",
-				  "description": "@error...@enderror",
-				  "disabled": false,
-				  "snippet": "@error ('${1:record}') \n\t$TM_SELECTED_TEXT\n@enderror$0"
-			  }
-			},
-			"wrap.with.env": {
-				"type": "object",
-				"default": {
-				  "label": "@env",
-				  "description": "@env...@endenv",
-				  "disabled": false,
-				  "snippet": "@env ('${1:staging}') \n\t$TM_SELECTED_TEXT\n@endenv$0"
-			  }
-			},
-			"wrap.with.php": {
-				"type": "object",
-				"default": {
-				  "label": "@php",
-				  "description": "@php...@endphp",
-				  "disabled": false,
-				  "snippet": "@php\n\t$TM_SELECTED_TEXT\n@endphp$0"
-			  }
-			},			
-			"wrap.with.production": {
-				"type": "object",
-				"default": {
-				  "label": "@production",
-				  "description": "@production...@endproduction",
-				  "disabled": false,
-				  "snippet": "@production\n\t$TM_SELECTED_TEXT\n@endproduction$0"
-			  }
-			},
-			"wrap.with.verbatim": {
-				"type": "object",
-				"default": {
-				  "label": "@verbatim",
-				  "description": "@verbatim...@endverbatim",
-				  "disabled": false,
-				  "snippet": "@verbatim\n\t$TM_SELECTED_TEXT\n@endverbatim$0"
-			  }
-			},				
-			"wrap.with.switch": {
-				"type": "object",
-				"default": {
-				  "label": "@switch",
-				  "description": "@switch...@case...@endswitch",
-				  "disabled": false,
-				  "snippet": "@switch (${1:\\$type})\n\t@case(${2:1}) \n\t\t$TM_SELECTED_TEXT\n\t\t@break \n\t@case(${3:2}) \n\n\t\t@break \n\t@default \n\n@endswitch"
-			  }
-			}																			
-		  }
+			"type": "object",
+			"title": "Wrap With",
+			"properties": {
+				"wrap.with.if": {
+					"type": "object",
+					"default": {
+						"label": "@if",
+						"description": "@if()...@endif",
+						"disabled": false,
+						"snippet": "@if (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endif$0"
+					}
+				},
+				"wrap.with.ifelse": {
+					"type": "object",
+					"default": {
+						"label": "@if-else",
+						"description": "@if()...@else...@endif",
+						"disabled": false,
+						"snippet": "@if (${1:condition}) \n\t$TM_SELECTED_TEXT\n@else \n\n@endif$0"
+					}
+				},
+				"wrap.with.for": {
+					"type": "object",
+					"default": {
+						"label": "@for",
+						"description": "@for...@endfor",
+						"disabled": false,
+						"snippet": "@for (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endfor$0"
+					}
+				},
+				"wrap.with.foreach": {
+					"type": "object",
+					"default": {
+						"label": "@foreach",
+						"description": "@foreach...@endforeach",
+						"disabled": false,
+						"snippet": "@foreach (${1:\\$collection} as ${2:\\$item}) \n\t$TM_SELECTED_TEXT\n@endforeach$0"
+					}
+				},
+				"wrap.with.forelse": {
+					"type": "object",
+					"default": {
+						"label": "@forelse",
+						"description": "@forelse...@empty...@endforelse",
+						"disabled": false,
+						"snippet": "@forelse (${1:\\$collection} as ${2:\\$item}) \n\t$TM_SELECTED_TEXT\n@empty \n\n@endforelse"
+					}
+				},
+				"wrap.with.while": {
+					"type": "object",
+					"default": {
+						"label": "@while",
+						"description": "@while...@endwhile",
+						"disabled": false,
+						"snippet": "@while (${1:condition}) \n\t$TM_SELECTED_TEXT\n@endwhile$0"
+					}
+				},
+				"wrap.with.push": {
+					"type": "object",
+					"default": {
+						"label": "@push",
+						"description": "@push...@endpush",
+						"disabled": false,
+						"snippet": "@push ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endpush$0"
+					}
+				},
+				"wrap.with.prepend": {
+					"type": "object",
+					"default": {
+						"label": "@prepend",
+						"description": "@prepend...@endprepend",
+						"disabled": false,
+						"snippet": "@prepend ('${1:scripts}') \n\t$TM_SELECTED_TEXT\n@endprepend$0"
+					}
+				},
+				"wrap.with.once": {
+					"type": "object",
+					"default": {
+						"label": "@once",
+						"description": "@once...@endonce",
+						"disabled": false,
+						"snippet": "@once \n\t$TM_SELECTED_TEXT\n@endonce$0"
+					}
+				},
+				"wrap.with.section": {
+					"type": "object",
+					"default": {
+						"label": "@section",
+						"description": "@section...@endsection",
+						"disabled": false,
+						"snippet": "@section ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endsection$0"
+					}
+				},
+				"wrap.with.sectionshow": {
+					"type": "object",
+					"default": {
+						"label": "@section-show",
+						"description": "@section...@show",
+						"disabled": false,
+						"snippet": "@section ('${1}') \n\t$TM_SELECTED_TEXT\n@show$0"
+					}
+				},
+				"wrap.with.hassection": {
+					"type": "object",
+					"default": {
+						"label": "@has-section",
+						"description": "@hasSection...@else...@endif",
+						"disabled": false,
+						"snippet": "@hasSection ('${1:name}') \n\t$TM_SELECTED_TEXT\n@else \n\n@endif"
+					}
+				},
+				"wrap.with.unless": {
+					"type": "object",
+					"default": {
+						"label": "@unless",
+						"description": "@unless...@endunless",
+						"disabled": false,
+						"snippet": "@unless ($1) \n\t$TM_SELECTED_TEXT\n@endunless$0"
+					}
+				},
+				"wrap.with.can": {
+					"type": "object",
+					"default": {
+						"label": "@can",
+						"description": "@can...@endcan",
+						"disabled": false,
+						"snippet": "@can ('${1:update}', ${2:Model}::class) \n\t$TM_SELECTED_TEXT\n@endcan$0"
+					}
+				},
+				"wrap.with.canelse": {
+					"type": "object",
+					"default": {
+						"label": "@can-elsecan",
+						"description": "@can...@elsecan...@endcan",
+						"disabled": false,
+						"snippet": "@can ('${1:update}', ${2:\\$post}) \n\t$TM_SELECTED_TEXT\n@elsecan ('${3:create}', ${4:\\$post}) \n\n@endcan"
+					}
+				},
+				"wrap.with.cannot": {
+					"type": "object",
+					"default": {
+						"label": "@cannot",
+						"description": "@cannot...@endcannot",
+						"disabled": false,
+						"snippet": "@cannot ('${1:update}', ${2:Model}::class) \n\t$TM_SELECTED_TEXT\n@endcannot$0"
+					}
+				},
+				"wrap.with.cannotelse": {
+					"type": "object",
+					"default": {
+						"label": "@cannot-elsecannot",
+						"description": "@cannot...@elsecannot...@endcannot",
+						"disabled": false,
+						"snippet": "@cannot ('${1:update}', ${2:\\$post}) \n\t$TM_SELECTED_TEXT\n@elsecannot ('${3:create}', ${4:\\$post}) \n\n@endcannot"
+					}
+				},
+				"wrap.with.component": {
+					"type": "object",
+					"default": {
+						"label": "@component",
+						"description": "@component...@endcomponent",
+						"disabled": false,
+						"snippet": "@component ('$1') \n\t$TM_SELECTED_TEXT\n@endcomponent$0"
+					}
+				},
+				"wrap.with.slot": {
+					"type": "object",
+					"default": {
+						"label": "@slot",
+						"description": "@slot...@endslot",
+						"disabled": false,
+						"snippet": "@slot ('$1') \n\t$TM_SELECTED_TEXT\n@endslot$0"
+					}
+				},
+				"wrap.with.isset": {
+					"type": "object",
+					"default": {
+						"label": "@isset",
+						"description": "@isset...@endisset",
+						"disabled": false,
+						"snippet": "@isset (${1:\\$record}) \n\t$TM_SELECTED_TEXT\n@endisset$0"
+					}
+				},
+				"wrap.with.empty": {
+					"type": "object",
+					"default": {
+						"label": "@empty",
+						"description": "@empty...@endempty",
+						"disabled": false,
+						"snippet": "@empty (${1:\\$record}) \n\t$TM_SELECTED_TEXT\n@endempty$0"
+					}
+				},
+				"wrap.with.auth": {
+					"type": "object",
+					"default": {
+						"label": "@auth",
+						"description": "@auth...@endauth",
+						"disabled": false,
+						"snippet": "@auth\n\t$TM_SELECTED_TEXT\n@endauth$0"
+					}
+				},
+				"wrap.with.guest": {
+					"type": "object",
+					"default": {
+						"label": "@guest",
+						"description": "@guest...@endguest",
+						"disabled": false,
+						"snippet": "@guest\n\t$TM_SELECTED_TEXT\n@endguest$0"
+					}
+				},
+				"wrap.with.error": {
+					"type": "object",
+					"default": {
+						"label": "@error",
+						"description": "@error...@enderror",
+						"disabled": false,
+						"snippet": "@error ('${1:record}') \n\t$TM_SELECTED_TEXT\n@enderror$0"
+					}
+				},
+				"wrap.with.env": {
+					"type": "object",
+					"default": {
+						"label": "@env",
+						"description": "@env...@endenv",
+						"disabled": false,
+						"snippet": "@env ('${1:staging}') \n\t$TM_SELECTED_TEXT\n@endenv$0"
+					}
+				},
+				"wrap.with.php": {
+					"type": "object",
+					"default": {
+						"label": "@php",
+						"description": "@php...@endphp",
+						"disabled": false,
+						"snippet": "@php\n\t$TM_SELECTED_TEXT\n@endphp$0"
+					}
+				},
+				"wrap.with.production": {
+					"type": "object",
+					"default": {
+						"label": "@production",
+						"description": "@production...@endproduction",
+						"disabled": false,
+						"snippet": "@production\n\t$TM_SELECTED_TEXT\n@endproduction$0"
+					}
+				},
+				"wrap.with.verbatim": {
+					"type": "object",
+					"default": {
+						"label": "@verbatim",
+						"description": "@verbatim...@endverbatim",
+						"disabled": false,
+						"snippet": "@verbatim\n\t$TM_SELECTED_TEXT\n@endverbatim$0"
+					}
+				},
+				"wrap.with.switch": {
+					"type": "object",
+					"default": {
+						"label": "@switch",
+						"description": "@switch...@case...@endswitch",
+						"disabled": false,
+						"snippet": "@switch (${1:\\$type})\n\t@case(${2:1}) \n\t\t$TM_SELECTED_TEXT\n\t\t@break \n\t@case(${3:2}) \n\n\t\t@break \n\t@default \n\n@endswitch"
+					}
+				}
+			}
 		},
 		"commands": [
-		  {
-			"command": "wrap.with.if",
-			"title": "@if"
-		  },
-		  {
-			"command": "wrap.with.ifelse",
-			"title": "@if-else"
-		  },
-		  {
-			"command": "wrap.with.for",
-			"title": "@for"
-		  },
-		  {
-			"command": "wrap.with.foreach",
-			"title": "@foreach"
-		  },
-		  {
-			"command": "wrap.with.forelse",
-			"title": "@forelse"
-		  },
-		  {
-			"command": "wrap.with.while",
-			"title": "@while"
-		  },
-		  {
-			"command": "wrap.with.push",
-			"title": "@push"
-		  },
-		  {
-			"command": "wrap.with.prepend",
-			"title": "@prepend"
-		  },
-		  {
-			"command": "wrap.with.once",
-			"title": "@once"
-		  },		  
-		  {
-			"command": "wrap.with.section",
-			"title": "@section"
-		  },
-		  {
-			"command": "wrap.with.sectionshow",
-			"title": "@section-show"
-		  },
-		  {
-			"command": "wrap.with.hassection",
-			"title": "@has-section"
-		  },
-		  {
-			"command": "wrap.with.unless",
-			"title": "@unless"
-		  },
-		  {
-			"command": "wrap.with.can",
-			"title": "@can"
-		  },
-		  {
-			"command": "wrap.with.canelse",
-			"title": "@can-elsecan"
-		  },
-		  {
-			"command": "wrap.with.cannot",
-			"title": "@cannot"
-		  },
-		  {
-			"command": "wrap.with.cannotelse",
-			"title": "@cannot-elsecannot"
-		  },
-		  {
-			"command": "wrap.with.component",
-			"title": "@component"
-		  },
-		  {
-			"command": "wrap.with.slot",
-			"title": "@slot"
-		  },
-		  {
-			"command": "wrap.with.isset",
-			"title": "@isset"
-		  },
-		  {
-			"command": "wrap.with.empty",
-			"title": "@empty"
-		  },
-		  {
-			"command": "wrap.with.auth",
-			"title": "@auth"
-		  },
-		  {
-			"command": "wrap.with.guest",
-			"title": "@guest"
-		  },
-		  {
-			"command": "wrap.with.error",
-			"title": "@error"
-		  },
-		  {
-			"command": "wrap.with.env",
-			"title": "@env"
-		  },
-		  {
-			"command": "wrap.with.php",
-			"title": "@php"
-		  },
-		  {
-			"command": "wrap.with.production",
-			"title": "@production"
-		  },
-		  {
-			"command": "wrap.with.verbatim",
-			"title": "@verbatim"
-		  },		  
-		  {
-			"command": "wrap.with.switch",
-			"title": "@switch"
-		  }		  	  
-		  	  		  		  	  		  			  		  	  
+			{
+				"command": "wrap.with.if",
+				"title": "@if"
+			},
+			{
+				"command": "wrap.with.ifelse",
+				"title": "@if-else"
+			},
+			{
+				"command": "wrap.with.for",
+				"title": "@for"
+			},
+			{
+				"command": "wrap.with.foreach",
+				"title": "@foreach"
+			},
+			{
+				"command": "wrap.with.forelse",
+				"title": "@forelse"
+			},
+			{
+				"command": "wrap.with.while",
+				"title": "@while"
+			},
+			{
+				"command": "wrap.with.push",
+				"title": "@push"
+			},
+			{
+				"command": "wrap.with.prepend",
+				"title": "@prepend"
+			},
+			{
+				"command": "wrap.with.once",
+				"title": "@once"
+			},
+			{
+				"command": "wrap.with.section",
+				"title": "@section"
+			},
+			{
+				"command": "wrap.with.sectionshow",
+				"title": "@section-show"
+			},
+			{
+				"command": "wrap.with.hassection",
+				"title": "@has-section"
+			},
+			{
+				"command": "wrap.with.unless",
+				"title": "@unless"
+			},
+			{
+				"command": "wrap.with.can",
+				"title": "@can"
+			},
+			{
+				"command": "wrap.with.canelse",
+				"title": "@can-elsecan"
+			},
+			{
+				"command": "wrap.with.cannot",
+				"title": "@cannot"
+			},
+			{
+				"command": "wrap.with.cannotelse",
+				"title": "@cannot-elsecannot"
+			},
+			{
+				"command": "wrap.with.component",
+				"title": "@component"
+			},
+			{
+				"command": "wrap.with.slot",
+				"title": "@slot"
+			},
+			{
+				"command": "wrap.with.isset",
+				"title": "@isset"
+			},
+			{
+				"command": "wrap.with.empty",
+				"title": "@empty"
+			},
+			{
+				"command": "wrap.with.auth",
+				"title": "@auth"
+			},
+			{
+				"command": "wrap.with.guest",
+				"title": "@guest"
+			},
+			{
+				"command": "wrap.with.error",
+				"title": "@error"
+			},
+			{
+				"command": "wrap.with.env",
+				"title": "@env"
+			},
+			{
+				"command": "wrap.with.php",
+				"title": "@php"
+			},
+			{
+				"command": "wrap.with.production",
+				"title": "@production"
+			},
+			{
+				"command": "wrap.with.verbatim",
+				"title": "@verbatim"
+			},
+			{
+				"command": "wrap.with.switch",
+				"title": "@switch"
+			}
 		],
 		"keybindings": [
-		  {
-			"command": "wrap.with",
-			"key": "ctrl+shift+T",
-			"mac": "cmd+shift+T",
-			"when": "editorHasSelection"
-		  }
+			{
+				"command": "wrap.with",
+				"key": "ctrl+shift+T",
+				"mac": "cmd+shift+T",
+				"when": "editorHasSelection"
+			}
 		]
-	  },
+	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
@@ -438,13 +437,13 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.52.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.4",
 		"@types/node": "^12.11.7",
-		"eslint": "^7.15.0",
+		"@types/vscode": "^1.52.0",
 		"@typescript-eslint/eslint-plugin": "^4.9.0",
 		"@typescript-eslint/parser": "^4.9.0",
+		"eslint": "^7.15.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.1.3",
 		"typescript": "^4.1.2",
