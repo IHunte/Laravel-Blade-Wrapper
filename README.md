@@ -35,6 +35,7 @@ An extension to wrap Blade directives.
 | @forelse...@empty...@endforelse    |
 | @while...@endwhile                 |
 | @push...@endpush                   |
+| @pushOnce...@endPushOnce           |
 | @prepend...@endprepend             |
 | @once...@endonce                   |
 | @section...@endsection             |
