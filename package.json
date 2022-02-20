@@ -101,6 +101,15 @@
 						"snippet": "@push ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endpush$0"
 					}
 				},
+				"wrap.with.pushonce": {
+					"type": "object",
+					"default": {
+						"label": "@pushOnce",
+						"description": "@pushOnce...@endPushOnce",
+						"disabled": false,
+						"snippet": "@pushOnce ('${1:name}') \n\t$TM_SELECTED_TEXT\n@endPushOnce$0"
+					}
+				},				
 				"wrap.with.prepend": {
 					"type": "object",
 					"default": {
@@ -330,6 +339,10 @@
 				"command": "wrap.with.push",
 				"title": "@push"
 			},
+			{
+				"command": "wrap.with.pushonce",
+				"title": "@pushOnce"
+			},			
 			{
 				"command": "wrap.with.prepend",
 				"title": "@prepend"
