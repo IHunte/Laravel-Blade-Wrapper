@@ -13,7 +13,7 @@
 		"url": "https://github.com/IHunte/Laravel-Blade-Wrapper/issues"
 	},
 	"engines": {
-		"vscode": "^1.52.0"
+		"vscode": "^1.64.0"
 	},
 	"keywords": [
 		"laravel",
