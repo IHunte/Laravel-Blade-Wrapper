@@ -3,6 +3,15 @@
 ![GitHub](https://img.shields.io/github/license/IHunte/Laravel-Blade-Wrapper)
 [![Visual Studio Marketplace Installs - Azure DevOps Extension](https://img.shields.io/visual-studio-marketplace/azure-devops/installs/services/IHunte.laravel-blade-wrapper?color=%20)](https://marketplace.visualstudio.com/items?itemName=IHunte.laravel-blade-wrapper)
 
+<p>
+
+> If this project has been helpful to you, please consider buying me a coffee. I'm currently going through a rough patch, and your support would mean a lot. Every little bit can help, if you want to know more you can contact me here [@IHunte_dev](https://twitter.com/IHunte_dev).
+>
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/IHunte)
+
+</p>
+
 <p align="center">
 <br />
 <img src="https://raw.githubusercontent.com/IHunte/Laravel-Blade-Wrapper/main/images/icon.png">
@@ -71,10 +80,6 @@ An extension to wrap Blade directives.
 ## Contribution
 
 If you have any suggestion please open an [issue](https://github.com/IHunte/Laravel-Blade-Wrapper/issues) or contact me on [@IHunte_dev](https://twitter.com/IHunte_dev).
-
-If you find this project useful — or just feeling generous, consider buying me a coffee.
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/IHunte)
 
 <br>
 
