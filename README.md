@@ -58,6 +58,7 @@ An extension to wrap Blade directives.
 | @production...@endproduction       |
 | @verbatim...@endverbatim           |
 | @switch...@case...@endswitch       |
+| @session...@endsesion              |
 
 <br>
 

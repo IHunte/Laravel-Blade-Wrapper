@@ -307,6 +307,15 @@
 						"disabled": false,
 						"snippet": "@switch (${1:\\$type})\n\t@case(${2:1}) \n\t\t$TM_SELECTED_TEXT\n\t\t@break \n\t@case(${3:2}) \n\n\t\t@break \n\t@default \n\n@endswitch"
 					}
+				},
+				"wrap.with.session": {
+					"type": "object",
+					"default": {
+						"label": "@session",
+						"description": "@session()...@endsession",
+						"disabled": false,
+						"snippet": "@session ('${1:key}') \n\t$TM_SELECTED_TEXT\n@endsession$0"
+					}
 				}
 			}
 		},
@@ -430,6 +439,10 @@
 			{
 				"command": "wrap.with.switch",
 				"title": "@switch"
+			},
+			{
+				"command": "wrap.with.session",
+				"title": "@session"
 			}
 		],
 		"keybindings": [
