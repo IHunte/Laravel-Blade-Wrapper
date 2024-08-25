@@ -9,3 +9,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - new Blade directives `@pushOnce`
+- new Blade directives `@session`
